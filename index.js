@@ -13,9 +13,11 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const corsOptions = { credentials: true, origin: process.env.URL || '*' };
 
-app.get('/', (req, res) => {
-  res.send('Hello world');
-});
+app.use(cors(corsOptions));
+app.use(json());
+app.use(cookieParser());
+
+app.use('/', express.static(join(__dirname, 'public')));
 
 const start = () => {
   try {
