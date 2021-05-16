@@ -1,9 +1,19 @@
+const express = require('express');
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+app.get('/', (req, res) => {
+  res.send('Hello world');
+});
+
 const start = () => {
-  for (let i = 1; i <= 100; i++) {
-    if (i % 15 === 0) console.log('fizzbuuz');
-    if (i % 5 === 0) console.log('buzz');
-    if (i % 3 === 0) console.log('fizz');
-    else console.log(i);
+  try {
+    app.listen(PORT, () => {
+      console.log(`🚀 Server started at ${PORT}`);
+    });
+  } catch (error) {
+    console.log(error);
   }
 };
 
