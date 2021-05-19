@@ -22,7 +22,7 @@ app.use('/', express.static(join(__dirname, 'public')));
 const start = () => {
   try {
     app.listen(PORT, () => {
-      console.log(`🚀 Server started at ${PORT}.Enjoy)`);
+      console.log(`🚀 Server started at ${PORT}.Ready to serve)`);
     });
   } catch (error) {
     console.log(error);
